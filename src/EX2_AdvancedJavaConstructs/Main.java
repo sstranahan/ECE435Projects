@@ -17,7 +17,6 @@ public class Main {
         System.out.println("MyNum Magnitude: " + cpx.magnitude());
 
         Complex sum;
-        sum = new Complex();
 
         sum = cpx.add(cpx2);
         sum.print("Sum Complex");
