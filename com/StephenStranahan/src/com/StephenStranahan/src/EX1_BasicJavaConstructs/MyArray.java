@@ -1,6 +1,7 @@
 package com.StephenStranahan.src.EX1_BasicJavaConstructs;
 
 import java.lang.Math;
+import com.StephenStranahan.src.EX1_BasicJavaConstructs.IntRef;
 
 public class MyArray {
 
@@ -71,4 +72,52 @@ public class MyArray {
         return max;
     }
 
+   public static int getCountInRange(int n, int[] x, int minVal, int maxVal) {
+
+        int count = 0;
+
+        for (int i = 0; i < n ; i++) {
+            if ((x[i] >= minVal) && (x[i] <= maxVal))
+                count++;
+        }
+        return count;
+   }
+
+   public static int[] getValuesInRange(int n, int[] x, int minVal, int maxVal, IntRef numInRange) {
+
+        int[] outArr = new int[n];
+        int j = 0;
+        numInRange.value = 0;
+
+            for (int i = 0; i < n; i++) {
+                if ((x[i] <= maxVal) && (x[i] >= minVal)) {
+                    outArr[j] = x[i];
+                    j++;
+                    numInRange.value++;
+                }
+            }
+        return outArr;
+   }
+
+    public static int[] getIndexInRange(int n, int[] x, int minVal, int maxVal, IntRef numInRange) {
+        int[] outArr = new int[n];
+
+        for (int k = 0; k<n; k++) {
+            outArr[k] = 999;
+        }
+
+        int j = 0;
+        numInRange.value = 0;
+
+        for (int i = 0; i < n; i++) {
+            if ((x[i] <= maxVal) && (x[i] >= minVal)) {
+                outArr[j] = i;
+                j++;
+                numInRange.value++;
+            }
+        }
+        return outArr;
+    }
+
 }
+
