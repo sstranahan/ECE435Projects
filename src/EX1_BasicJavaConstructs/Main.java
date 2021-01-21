@@ -1,7 +1,4 @@
-package com.StephenStranahan.src.EX1_BasicJavaConstructs;
-
-import com.StephenStranahan.src.EX1_BasicJavaConstructs.MyArray;
-import com.StephenStranahan.src.EX1_BasicJavaConstructs.IntRef;
+package EX1_BasicJavaConstructs;
 
 import java.io.File;
 import java.io.FileNotFoundException;

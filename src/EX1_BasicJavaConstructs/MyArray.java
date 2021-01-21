@@ -1,7 +1,6 @@
-package com.StephenStranahan.src.EX1_BasicJavaConstructs;
+package EX1_BasicJavaConstructs;
 
 import java.lang.Math;
-import com.StephenStranahan.src.EX1_BasicJavaConstructs.IntRef;
 
 public class MyArray {
 

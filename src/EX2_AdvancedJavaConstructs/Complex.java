@@ -1,7 +1,6 @@
 package EX2_AdvancedJavaConstructs;
 
 import java.lang.String;
-import java.math.*;
 
 public class Complex {
 

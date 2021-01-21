@@ -1,4 +1,4 @@
-package com.StephenStranahan.src.EX1_BasicJavaConstructs;
+package EX1_BasicJavaConstructs;
 
 public class IntRef {
 
