@@ -4,16 +4,16 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 
 public class SvgMaker {
-    public String imageName;
-    public int width;
-    public int height;
+    public String fileName;
+    public int imgWidth;
+    public int imgHeight;
 
     private FileWriter myWriter;
 
     public SvgMaker(String imageName, int width, int height) {
-        this.imageName = imageName;
-        this.width = width;
-        this.height = height;
+        this.fileName = imageName;
+        this.imgWidth = width;
+        this.imgHeight = height;
     }
 
     public void writeRootTag() {
