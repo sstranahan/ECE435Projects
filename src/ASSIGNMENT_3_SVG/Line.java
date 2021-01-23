@@ -25,15 +25,15 @@ public class Line {
     }
 
     public void print(String label) {
-        System.out.println("Line - " + label + ":");
+        System.out.println("\tLine - " + label + ":");
         System.out.println("X1: " + x1 + "\tX2: " + x2 + "\tY1: " + y1
                 + "\tY2: " + y2 + "\tStroke: " + stroke);
     }
 
     public void print() {
-        System.out.println("Line: ");
+        System.out.println("\tLine: ");
         System.out.println("X1: " + x1 + "\tX2: " + x2 + "\tY1: " + y1
-                + "\tY2: " + y2 + "\tStroke: " + stroke);
+                + "\tY2: " + y2 + "\tStroke: " + stroke.toString());
     }
 
 }

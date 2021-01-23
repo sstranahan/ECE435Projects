@@ -19,13 +19,17 @@ public class Stroke {
     }
 
     public void print(String label) {
-        System.out.println("Stroke - " + label + ":");
+        System.out.println("\tStroke - " + label + ":");
         System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
     }
 
     public void print() {
-        System.out.println("Stroke: ");
+        System.out.println("\tStroke: ");
         System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
+    }
+
+    public String toString() {
+        return ("Stroke -- Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
     }
 
 }

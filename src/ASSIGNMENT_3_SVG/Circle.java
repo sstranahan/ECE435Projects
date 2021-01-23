@@ -23,15 +23,15 @@ public class Circle {
     }
 
     public void print(String label) {
-        System.out.println("Circle - " + label + ":");
+        System.out.println("\tCircle - " + label + ":");
         System.out.println("Center X: " + cx + "\tCenter Y: " + cy + "\tRadius: " + r
                 + "\tStroke: " + stroke + "\tFill: " + fill);
     }
 
     public void print() {
-        System.out.println("Circle: ");
+        System.out.println("\tCircle: ");
         System.out.println("Center X: " + cx + "\tCenter Y: " + cy + "\tRadius: " + r
-                + "\tStroke: " + stroke + "\tFill: " + fill);
+                + "\tStroke: " + stroke.toString() + "\tFill: " + fill.toString());
     }
 
 }
