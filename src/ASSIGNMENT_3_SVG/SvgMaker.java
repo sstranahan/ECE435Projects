@@ -2,13 +2,38 @@ package ASSIGNMENT_3_SVG;
 
 import java.io.FileOutputStream;
 import java.io.FileWriter;
+import java.io.IOException;
 
 public class SvgMaker {
-    public String fileName;
-    public int imgWidth;
-    public int imgHeight;
+    private String fileName;
+    private int imgWidth;
+    private int imgHeight;
 
     private FileWriter myWriter;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public int getImgWidth() {
+        return imgWidth;
+    }
+
+    public void setImgWidth(int imgWidth) {
+        this.imgWidth = imgWidth;
+    }
+
+    public int getImgHeight() {
+        return imgHeight;
+    }
+
+    public void setImgHeight(int imgHeight) {
+        this.imgHeight = imgHeight;
+    }
 
     public SvgMaker(String imageName, int width, int height) {
         this.fileName = imageName;
@@ -16,7 +41,7 @@ public class SvgMaker {
         this.imgHeight = height;
     }
 
-    public void writeRootTag() {
-         //TODO: WRITE TO FILE, ETC, ETC
+    public void writeRootTag() throws IOException {
+
     }
 }

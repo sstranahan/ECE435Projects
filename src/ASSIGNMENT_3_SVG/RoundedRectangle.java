@@ -1,75 +1,37 @@
 package ASSIGNMENT_3_SVG;
 
-public class Stroke {
 
-    // Private variables
-    private int red;
-    private int green;
-    private int blue;
-    private int strokeWidth;
+public class RoundedRectangle extends Rectangle{
 
-    public int getRed() {
-        return red;
+    //Public variables
+    int rx;
+
+    // Public methods
+    public RoundedRectangle(int length, int width, int x, int y, int rx, Stroke stroke, Fill fill) {
+        super(length, width, x, y, stroke, fill);
+        this.rx = rx;
     }
 
-    public void setRed(int red) {
-        this.red = red;
-    }
-
-    public int getGreen() {
-        return green;
-    }
-
-    public void setGreen(int green) {
-        this.green = green;
-    }
-
-    public int getBlue() {
-        return blue;
-    }
-
-    public void setBlue(int blue) {
-        this.blue = blue;
-    }
-
-    public int getStrokeWidth() {
-        return strokeWidth;
-    }
-
-    public void setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = strokeWidth;
-    }
-
-// Public Methods
-    public Stroke(int red, int green, int blue, int strokeWidth) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-        this.strokeWidth = strokeWidth;
-    }
-
-    public void print(String label) {
+    // Override print functions
+    public void print(String label){
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Stroke - " + label + ":");
+        System.out.println("Rounded Rectangle - " + label + ":");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
+        System.out.println("Origin X: " + super.getX() + "\tOrigin Y: " + super.getY() + "\tLength: " + super.getLength() + "\tWidth: " + super.getWidth()
+                + "\tArea: " + getArea() + "\tRX: " + rx + "\nStroke: " + super.getStroke().toString() + "\nFill: " + super.getFill().toString());
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
 
-    public void print() {
+    public void print(){
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Stroke: ");
+        System.out.println("Rounded Rectangle: " );
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
+        System.out.println("Origin X: " + super.getX() + "\tOrigin Y: " + super.getY() + "\tLength: " + super.getLength() + "\tWidth: " + super.getWidth()
+                + "\tArea: " + getArea() + "\tRX: " + rx + "\nStroke: " + super.getStroke().toString() + "\nFill: " + super.getFill().toString());
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
-
-    public String toString() {
-        return ("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
-    }
-
 }

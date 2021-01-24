@@ -1,51 +1,11 @@
 package ASSIGNMENT_3_SVG;
 
-public class Stroke {
+public class DashedStroke extends Stroke{
+    int[] dashArray;
 
-    // Private variables
-    private int red;
-    private int green;
-    private int blue;
-    private int strokeWidth;
-
-    public int getRed() {
-        return red;
-    }
-
-    public void setRed(int red) {
-        this.red = red;
-    }
-
-    public int getGreen() {
-        return green;
-    }
-
-    public void setGreen(int green) {
-        this.green = green;
-    }
-
-    public int getBlue() {
-        return blue;
-    }
-
-    public void setBlue(int blue) {
-        this.blue = blue;
-    }
-
-    public int getStrokeWidth() {
-        return strokeWidth;
-    }
-
-    public void setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = strokeWidth;
-    }
-
-// Public Methods
-    public Stroke(int red, int green, int blue, int strokeWidth) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-        this.strokeWidth = strokeWidth;
+    public DashedStroke(int red, int green, int blue, int strokeWidth, int[] dashArray) {
+        super(red, green, blue, strokeWidth);
+        this.dashArray = dashArray;
     }
 
     public void print(String label) {
@@ -53,7 +13,11 @@ public class Stroke {
         System.out.println("***********************************************************************************************************");
         System.out.println("Stroke - " + label + ":");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
+        System.out.print("Red: " + super.getRed() + "\tGreen: " + super.getGreen() + "\tBlue: " + super.getBlue() + "\tWidth: " + super.getStrokeWidth() + "DashArray:");
+        for (int i = 0; i < dashArray.length; i++) {
+            System.out.print("\t" + dashArray[i]);
+        }
+        System.out.println();
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
@@ -63,13 +27,11 @@ public class Stroke {
         System.out.println("***********************************************************************************************************");
         System.out.println("Stroke: ");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
+        System.out.println("Red: " + super.getRed() + "\tGreen: " + super.getGreen() + "\tBlue: " + super.getBlue() + "\tWidth: " + super.getStrokeWidth() + "DashArray:");
+        for (int i = 0; i < dashArray.length; i++) {
+            System.out.print("\t" + dashArray[i]);
+        }
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
-
-    public String toString() {
-        return ("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
-    }
-
 }

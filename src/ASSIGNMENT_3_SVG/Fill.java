@@ -1,11 +1,11 @@
 package ASSIGNMENT_3_SVG;
 
 public class Fill {
-    // Public variables
-    public int red;
-    public int green;
-    public int blue;
-    public double opacity;
+    // Private variables
+    private int red;
+    private int green;
+    private int blue;
+    private double opacity;
 
     // Public methods
     public Fill(){
@@ -23,16 +23,26 @@ public class Fill {
     }
 
     public void print(String label) {
-        System.out.println("\tFill - " + label + ":" );
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
+        System.out.println("Fill - " + label + ":" );
+        System.out.println("***********************************************************************************************************");
         System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue);
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
     }
 
     public void print() {
-        System.out.println("\tFill: ");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue);
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
+        System.out.println("Fill: ");
+        System.out.println("***********************************************************************************************************");
+        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tOpacity: " + opacity);
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
     }
 
     public String toString() {
-        return ("Fill --\tRed: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tOpacity: " + opacity);
+        return ("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tOpacity: " + opacity);
     }
 }
