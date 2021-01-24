@@ -7,6 +7,38 @@ public class Fill {
     private int blue;
     private double opacity;
 
+    public int getRed() {
+        return red;
+    }
+
+    public void setRed(int red) {
+        this.red = red;
+    }
+
+    public int getGreen() {
+        return green;
+    }
+
+    public void setGreen(int green) {
+        this.green = green;
+    }
+
+    public int getBlue() {
+        return blue;
+    }
+
+    public void setBlue(int blue) {
+        this.blue = blue;
+    }
+
+    public double getOpacity() {
+        return opacity;
+    }
+
+    public void setOpacity(double opacity) {
+        this.opacity = opacity;
+    }
+
     // Public methods
     public Fill(){
         red = 0;
@@ -19,7 +51,13 @@ public class Fill {
         this.red = red;
         this.green = green;
         this.blue = blue;
-        this.opacity = opacity;
+        if (opacity <= 1.0 && opacity >= 0.0) {
+            this.opacity = opacity;
+        }
+        else {
+            System.out.println("Error - opacity must be between 0 and 1.");
+            System.exit(1);
+        }
     }
 
     public void print(String label) {

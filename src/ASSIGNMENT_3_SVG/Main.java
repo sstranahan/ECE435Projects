@@ -2,45 +2,109 @@ package ASSIGNMENT_3_SVG;
 
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Random;
 
+// TODO: Write algorithm to generate image
+// TODO: Path class
 
 public class Main {
     public static void main(String[] args) {
 
-        final int ARR_MAX = 16;
+        double rangeMin = 0.98;
+        double rangeMax = 1.0;
 
-        int[] dashArr = {2,1,3,4};
+        Random r = new Random();
 
-        // Create class objects
-        Stroke s1 = new Stroke(0,0,0,2 );
-        DashedStroke ds1 = new DashedStroke(0,0,0,2,dashArr);
-        Fill f1 = new Fill(128,0,0,128);
-        Circle c1 = new Circle(12,12,8,s1,f1);
-        Line l1 = new Line(2,8,2,8,s1);
-        Rectangle r1 = new Rectangle(25,30,0,0, s1, f1);
-        RoundedRectangle r2 = new RoundedRectangle(25,25,0,0,5, ds1, f1);
+        System.out.println(((rangeMin + (rangeMax - rangeMin)) * r.nextDouble()
+                * ( r.nextBoolean() ? 1 : -1 )));
 
-        // Testing print methods
-        s1.print();
-        System.out.println();
+        final int STROKE_ARR_MAX = 16;
+        final int CIRC_ARR_MAX = 100;
 
-        f1.print();
-        System.out.println();
+        Stroke s1 = new Stroke(0,0,0,5);
+        Fill f1 = new Fill (255, 255, 0, 1.0);
 
-        c1.print();
-        System.out.println();
+        Circle[] circArr = new Circle[CIRC_ARR_MAX];
 
-        l1.print();
-        System.out.println();
+        circArr[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
 
-        r1.print("My rectangle");
-        System.out.println();
+        // Method to draw algorithmic connected circles
+        for (int i = 1; i < CIRC_ARR_MAX; i++) {
+            circArr[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                    * ( r.nextBoolean() ? 1 : -1 )) * circArr[i-1].getR()) + circArr[i-1].getCx()),
+                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                            * ( r.nextBoolean() ? 1 : -1 )) * circArr[i-1].getR()) + circArr[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+        }
 
-        r1.print();
-        System.out.println();
+        Circle[] circArr2 = new Circle[CIRC_ARR_MAX];
 
-        r2.print();
-        System.out.println();
+        circArr2[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
 
+        // Method to draw algorithmic connected circles
+        for (int i = 1; i < CIRC_ARR_MAX; i++) {
+            circArr2[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                    * ( r.nextBoolean() ? 1 : -1 )) * circArr2[i-1].getR()) + circArr2[i-1].getCx()),
+                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                            * ( r.nextBoolean() ? 1 : -1 )) * circArr2[i-1].getR()) + circArr2[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+        }
+
+        Circle[] circArr3 = new Circle[CIRC_ARR_MAX];
+
+        circArr3[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
+
+        // Method to draw algorithmic connected circles
+        for (int i = 1; i < CIRC_ARR_MAX; i++) {
+            circArr3[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                    * ( r.nextBoolean() ? 1 : -1 )) * circArr3[i-1].getR()) + circArr3[i-1].getCx()),
+                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                            * ( r.nextBoolean() ? 1 : -1 )) * circArr3[i-1].getR()) + circArr3[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+        }
+
+        Circle[] circArr4 = new Circle[CIRC_ARR_MAX];
+
+        circArr4[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
+
+        // Method to draw algorithmic connected circles
+        for (int i = 1; i < CIRC_ARR_MAX; i++) {
+            circArr4[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                    * ( r.nextBoolean() ? 1 : -1 )) * circArr4[i-1].getR()) + circArr4[i-1].getCx()),
+                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                            * ( r.nextBoolean() ? 1 : -1 )) * circArr4[i-1].getR()) + circArr4[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+        }
+
+        Circle[] circArr5 = new Circle[CIRC_ARR_MAX];
+
+        circArr5[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
+
+        // Method to draw algorithmic connected circles
+        for (int i = 1; i < CIRC_ARR_MAX; i++) {
+            circArr5[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                    * ( r.nextBoolean() ? 1 : -1 )) * circArr5[i-1].getR()) + circArr5[i-1].getCx()),
+                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
+                            * ( r.nextBoolean() ? 1 : -1 )) * circArr5[i-1].getR()) + circArr5[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+        }
+
+        SvgMaker svg = new SvgMaker("myFile.svg",1920,1080);
+
+        svg.initFileWriter();
+        svg.writeRootTag();
+
+        for (int i = 0; i < CIRC_ARR_MAX; i++) {
+            svg.drawCircle(circArr[i]);
+        }
+        for (int i = 0; i < CIRC_ARR_MAX; i++) {
+            svg.drawCircle(circArr2[i]);
+        }
+        for (int i = 0; i < CIRC_ARR_MAX; i++) {
+            svg.drawCircle(circArr3[i]);
+        }
+        for (int i = 0; i < CIRC_ARR_MAX; i++) {
+            svg.drawCircle(circArr4[i]);
+        }
+        for (int i = 0; i < CIRC_ARR_MAX; i++) {
+            svg.drawCircle(circArr5[i]);
+        }
+
+        svg.writeClosingTag();
     }
 }

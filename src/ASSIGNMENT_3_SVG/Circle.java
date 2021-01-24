@@ -3,16 +3,16 @@ package ASSIGNMENT_3_SVG;
 public class Circle {
 
     // Private variables
-    private double cx;
-    private double cy;
-    private double r;
+    private int cx;
+    private int cy;
+    private int r;
     private Stroke stroke;
 
     public double getCx() {
         return cx;
     }
 
-    public void setCx(double cx) {
+    public void setCx(int cx) {
         this.cx = cx;
     }
 
@@ -20,7 +20,7 @@ public class Circle {
         return cy;
     }
 
-    public void setCy(double cy) {
+    public void setCy(int cy) {
         this.cy = cy;
     }
 
@@ -28,7 +28,7 @@ public class Circle {
         return r;
     }
 
-    public void setR(double r) {
+    public void setR(int r) {
         this.r = r;
     }
 
@@ -51,7 +51,7 @@ public class Circle {
     private Fill fill;
 
     //Methods
-    public Circle(double cx, double cy, double r, Stroke stroke, Fill fill) {
+    public Circle(int cx, int cy, int r, Stroke stroke, Fill fill) {
         this.cx = cx;
         this.cy = cy;
         this.r = r;
