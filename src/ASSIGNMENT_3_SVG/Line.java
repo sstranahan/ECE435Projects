@@ -1,71 +1,76 @@
 package ASSIGNMENT_3_SVG;
 
-public class Fill {
-    // Private variables
-    private int red;
-    private int green;
-    private int blue;
-    private double opacity;
 
-    public int getRed() {
-        return red;
+
+public class Line {
+    // Private Variables
+    private int x1;
+    private int x2;
+    private int y1;
+    private int y2;
+
+    public int getX1() {
+        return x1;
     }
 
-    public void setRed(int red) {
-        this.red = red;
+    public void setX1(int x1) {
+        this.x1 = x1;
     }
 
-    public int getGreen() {
-        return green;
+    public int getX2() {
+        return x2;
     }
 
-    public void setGreen(int green) {
-        this.green = green;
+    public void setX2(int x2) {
+        this.x2 = x2;
     }
 
-    public int getBlue() {
-        return blue;
+    public int getY1() {
+        return y1;
     }
 
-    public void setBlue(int blue) {
-        this.blue = blue;
+    public void setY1(int y1) {
+        this.y1 = y1;
     }
 
-    public double getOpacity() {
-        return opacity;
+    public int getY2() {
+        return y2;
     }
 
-    public void setOpacity(double opacity) {
-        this.opacity = opacity;
+    public void setY2(int y2) {
+        this.y2 = y2;
     }
 
-    // Public methods
-    public Fill(){
-        red = 0;
-        green = 0;
-        blue = 0;
-        opacity = 0;
+    public Stroke getStroke() {
+        return stroke;
     }
 
-    public Fill(int red, int green, int blue, double opacity) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-        if (opacity <= 1.0 && opacity >= 0.0) {
-            this.opacity = opacity;
-        }
-        else {
-            System.out.println("Error - opacity must be between 0 and 1.");
-            System.exit(1);
-        }
+    public void setStroke(Stroke stroke) {
+        this.stroke = stroke;
+    }
+
+    private  Stroke stroke;
+
+    // Public Methods
+    public Line(int x1, int x2, int y1, int y2, Stroke stroke) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+        this.stroke = stroke;
+    }
+
+    public double getLength() {
+        return Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
     }
 
     public void print(String label) {
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Fill - " + label + ":" );
+        System.out.println("Line - " + label + ":");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue);
+        System.out.println("X1: " + x1 + "\tX2: " + x2 + "\tY1: " + y1
+                + "\tY2: " + y2 + "\tStroke: " + stroke);
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
@@ -73,14 +78,12 @@ public class Fill {
     public void print() {
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Fill: ");
+        System.out.println("Line: ");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tOpacity: " + opacity);
+        System.out.println("X1: " + x1 + "\tX2: " + x2 + "\tY1: " + y1
+                + "\tY2: " + y2 + "\tStroke: " + stroke.toString());
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
 
-    public String toString() {
-        return ("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tOpacity: " + opacity);
-    }
 }
