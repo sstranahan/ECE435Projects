@@ -3,6 +3,7 @@ package ASSIGNMENT_3_SVG;
 import java.io.*;
 
 public class SvgMaker {
+
     private String fileName;
     private int imgWidth;
     private int imgHeight;

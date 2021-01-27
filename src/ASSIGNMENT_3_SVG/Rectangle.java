@@ -1,7 +1,5 @@
 package ASSIGNMENT_3_SVG;
 
-import sun.security.util.Length;
-
 public class Rectangle {
 
     // Private variables
