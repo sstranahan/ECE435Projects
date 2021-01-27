@@ -71,5 +71,4 @@ public class Stroke {
     public String toString() {
         return ("Red: " + red + "\tGreen: " + green + "\tBlue: " + blue + "\tWidth: " + strokeWidth);
     }
-
 }
