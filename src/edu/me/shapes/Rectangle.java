@@ -1,6 +1,6 @@
-package EX5_Inheritance_Setters_getters;
+package edu.me.shapes;
 
-public class Rectangle {
+public class Rectangle extends Shape{
 
     protected double x;
     protected double y;

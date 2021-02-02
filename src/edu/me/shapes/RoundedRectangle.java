@@ -1,4 +1,4 @@
-package EX5_Inheritance_Setters_getters;
+package edu.me.shapes;
 
 public class RoundedRectangle extends Rectangle {
 

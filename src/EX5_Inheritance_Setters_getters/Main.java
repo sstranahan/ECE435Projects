@@ -1,6 +1,7 @@
 package EX5_Inheritance_Setters_getters;
 
-import javax.xml.bind.SchemaOutputResolver;
+import edu.me.shapes.Rectangle;
+import edu.me.shapes.RoundedRectangle;
 
 public class Main {
 
