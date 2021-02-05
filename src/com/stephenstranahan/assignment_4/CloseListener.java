@@ -1,17 +1,25 @@
 package com.stephenstranahan.assignment_4;
 
-import javax.swing.JSlider;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 
-public class MyMouseListener implements MouseListener {
+public class CloseListener implements MouseListener {
+
+    public JButton b1;
+
+    public CloseListener(JButton b1) {
+        this.b1 = b1;
+    }
+
+
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.print("hello!");
+        System.exit(0);
     }
 
     @Override
@@ -26,7 +34,7 @@ public class MyMouseListener implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        System.exit(0);
     }
 
     @Override
