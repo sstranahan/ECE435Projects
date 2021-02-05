@@ -90,33 +90,5 @@ public class SimpleUI implements Runnable {
         // Add panel to frame
         myFrame.add(panel);
 
-
-
-//        //JLabel
-//        JLabel myLabel = new JLabel("hi there!");
-//        Font myFont = new Font("Courier New", Font.BOLD, 36);
-//        myLabel.setFont(myFont);
-//        myLabel.setForeground(new Color(255, 255, 255));
-//        myFrame.add(myLabel);
-//
-//        //JButton
-//        JButton myButton = new JButton("Click Me!");
-//        myFrame.add(myButton);
-//
-//        //JSlider
-//        JSlider mySlider = new JSlider(JSlider.HORIZONTAL,0, 100, 5);
-//        myFrame.add(mySlider);
-
-        //etc.
-
-        //Event Handlers-----------------------------------------------
-
-//        //Button click event
-//        MyMouseListener myMouseListener = new MyMouseListener();
-//        myButton.addMouseListener(myMouseListener);
-//
-//        //Slider change event
-//        MyChangeListener myChangeListener = new MyChangeListener();
-//        mySlider.addChangeListener(myChangeListener);
     }
 } //MainUI class

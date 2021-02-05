@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ECE435Projects:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="ECE435Projects.jar">
+      <element id="module-output" name="ECE435Projects" />
+    </root>
+  </artifact>
+</component>
