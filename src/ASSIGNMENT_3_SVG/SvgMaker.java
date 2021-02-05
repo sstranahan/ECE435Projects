@@ -3,6 +3,7 @@ package ASSIGNMENT_3_SVG;
 import java.io.*;
 
 public class SvgMaker {
+
     private String fileName;
     private int imgWidth;
     private int imgHeight;
@@ -115,5 +116,22 @@ public class SvgMaker {
         myWriter.println(" fill = 'rgb(" + circle.getFill().getRed() + ", " + circle.getFill().getGreen() + ", "
                 + circle.getFill().getBlue() + ")' opacity = '" + circle.getFill().getOpacity() + "' />");
     }
+
+    public void drawPath(Path path) {
+        myWriter.print("<path d = '" + path.getdString() + "' stroke = 'rgb(" + path.getStroke().getRed() + ","
+                + path.getStroke().getGreen() + "," + path.getStroke().getBlue() + ")' stroke-width = '"
+                + path.getStroke().getStrokeWidth() + "'");
+
+        if (path.getStroke() instanceof DashedStroke) {
+            myWriter.print(" stroke-dasharray = '");
+            for (int i = 0; i < ((DashedStroke) path.getStroke()).dashArray.length; i++) {
+                myWriter.print(((DashedStroke) path.getStroke()).dashArray[i] + " ");
+            }
+            myWriter.print("'");
+        }
+        myWriter.println(" fill = 'rgb(" + path.getFill().getRed() + ", " + path.getFill().getGreen() + ", "
+                + path.getFill().getBlue() + ")' opacity = '" + path.getFill().getOpacity() + "' />");
+    }
 }
+
 
