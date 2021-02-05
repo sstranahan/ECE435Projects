@@ -1,38 +1,23 @@
 package ASSIGNMENT_3_SVG;
 
-public class Circle {
+public class Path {
 
-    // Private variables
-    private int cx;
-    private int cy;
-    private int r;
+    private String dString;
     private Stroke stroke;
+    private Fill fill;
 
-    final int CANVAS_X = 1920;
-    final int CANVAS_Y = 1080;
-
-    public double getCx() {
-        return cx;
+    public Path(String dString, Stroke stroke, Fill fill) {
+        this.dString = dString;
+        this.stroke = stroke;
+        this.fill = fill;
     }
 
-    public void setCx(int cx) {
-        this.cx = cx;
+    public String getdString() {
+        return dString;
     }
 
-    public double getCy() {
-        return cy;
-    }
-
-    public void setCy(int cy) {
-        this.cy = cy;
-    }
-
-    public double getR() {
-        return r;
-    }
-
-    public void setR(int r) {
-        this.r = r;
+    public void setdString(String dString) {
+        this.dString = dString;
     }
 
     public Stroke getStroke() {
@@ -51,39 +36,25 @@ public class Circle {
         this.fill = fill;
     }
 
-    private Fill fill;
-
-    //Methods
-    public Circle(int cx, int cy, int r, Stroke stroke, Fill fill) {
-        this.cx = cx;
-        this.cy = cy;
-        this.r = r;
-        this.stroke = stroke;
-        this.fill = fill;
-    }
-
-    public double getArea() {
-        return(Math.PI * r * r);
-    }
-
-    public void print(String label) {
-        System.out.println("***********************************************************************************************************");
-        System.out.println("\tCircle - " + label + ":");
-        System.out.println("***********************************************************************************************************");
-        System.out.println("Center X: " + cx + "\tCenter Y: " + cy + "\tRadius: " + r
-                + "\nStroke: " + stroke + "\nFill: " + fill);
-        System.out.println("***********************************************************************************************************");
-    }
-
-    public void print() {
+    public void print(String label){
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Circle: ");
+        System.out.println("Path - " + label + ":");
         System.out.println("***********************************************************************************************************");
-        System.out.println("Center X: " + cx + "\tCenter Y: " + cy + "\tRadius: " + r
-                + "\nStroke: " + stroke.toString() + "\nFill: " + fill.toString());
+        System.out.println("Path String: " + dString + "\nStroke: " + stroke.toString() + "\nFill: " + fill.toString());
         System.out.println("***********************************************************************************************************");
         System.out.println("***********************************************************************************************************");
     }
+
+    public void print(){
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
+        System.out.println("Path: " );
+        System.out.println("***********************************************************************************************************");
+        System.out.println("Path String: " + dString + "\nStroke: " + stroke.toString() + "\nFill: " + fill.toString());
+        System.out.println("***********************************************************************************************************");
+        System.out.println("***********************************************************************************************************");
+    }
+
 
 }

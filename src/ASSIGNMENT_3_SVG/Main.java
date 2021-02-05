@@ -10,81 +10,40 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-        double rangeMin = 0.98;
-        double rangeMax = 1.0;
+        final double RANGE_MIN = 0.8;
+        final double RANGE_MAX = 0.9;
+
+        final int R_MAX = 25;
+        final int CANVAS_X = 1920;
+        final int CANVAS_Y = 1080;
 
         Random r = new Random();
 
-        System.out.println(((rangeMin + (rangeMax - rangeMin)) * r.nextDouble()
-                * ( r.nextBoolean() ? 1 : -1 )));
-
         final int STROKE_ARR_MAX = 16;
-        final int CIRC_ARR_MAX = 100;
+        final int CIRC_ARR_MAX = 1000;
+
+        Boolean collision = false;
+
+        // Testing methods
+    //    System.out.println(getDoubleInRange(RANGE_MIN, RANGE_MAX));
+    //    System.out.println(getRandSign());
+
 
         Stroke s1 = new Stroke(0,0,0,5);
         Fill f1 = new Fill (255, 255, 0, 1.0);
 
         Circle[] circArr = new Circle[CIRC_ARR_MAX];
 
-        circArr[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
+        circArr[0] = new Circle((int)(Math.random() * CANVAS_X),(int)(Math.random() * CANVAS_Y), (int)(Math.random() * R_MAX),s1, f1);
 
         // Method to draw algorithmic connected circles
         for (int i = 1; i < CIRC_ARR_MAX; i++) {
-            circArr[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                    * ( r.nextBoolean() ? 1 : -1 )) * circArr[i-1].getR()) + circArr[i-1].getCx()),
-                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                            * ( r.nextBoolean() ? 1 : -1 )) * circArr[i-1].getR()) + circArr[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
+
+            circArr[i] = new Circle((int)(Math.random() * CANVAS_X),(int)(Math.random() * CANVAS_Y), (int)(Math.random() * R_MAX),s1, f1);
+
         }
 
-        Circle[] circArr2 = new Circle[CIRC_ARR_MAX];
-
-        circArr2[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
-
-        // Method to draw algorithmic connected circles
-        for (int i = 1; i < CIRC_ARR_MAX; i++) {
-            circArr2[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                    * ( r.nextBoolean() ? 1 : -1 )) * circArr2[i-1].getR()) + circArr2[i-1].getCx()),
-                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                            * ( r.nextBoolean() ? 1 : -1 )) * circArr2[i-1].getR()) + circArr2[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
-        }
-
-        Circle[] circArr3 = new Circle[CIRC_ARR_MAX];
-
-        circArr3[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
-
-        // Method to draw algorithmic connected circles
-        for (int i = 1; i < CIRC_ARR_MAX; i++) {
-            circArr3[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                    * ( r.nextBoolean() ? 1 : -1 )) * circArr3[i-1].getR()) + circArr3[i-1].getCx()),
-                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                            * ( r.nextBoolean() ? 1 : -1 )) * circArr3[i-1].getR()) + circArr3[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
-        }
-
-        Circle[] circArr4 = new Circle[CIRC_ARR_MAX];
-
-        circArr4[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
-
-        // Method to draw algorithmic connected circles
-        for (int i = 1; i < CIRC_ARR_MAX; i++) {
-            circArr4[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                    * ( r.nextBoolean() ? 1 : -1 )) * circArr4[i-1].getR()) + circArr4[i-1].getCx()),
-                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                            * ( r.nextBoolean() ? 1 : -1 )) * circArr4[i-1].getR()) + circArr4[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
-        }
-
-        Circle[] circArr5 = new Circle[CIRC_ARR_MAX];
-
-        circArr5[0] = new Circle((int)(Math.random() * 1290),(int)(Math.random() * 1080), (int)(Math.random() * 30),s1, f1);
-
-        // Method to draw algorithmic connected circles
-        for (int i = 1; i < CIRC_ARR_MAX; i++) {
-            circArr5[i] = new Circle((int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                    * ( r.nextBoolean() ? 1 : -1 )) * circArr5[i-1].getR()) + circArr5[i-1].getCx()),
-                    (int) ((((rangeMin + (rangeMax - rangeMin) * r.nextDouble())
-                            * ( r.nextBoolean() ? 1 : -1 )) * circArr5[i-1].getR()) + circArr5[i-1].getCy()), (int)(Math.random() * 30), s1, f1);
-        }
-
-        SvgMaker svg = new SvgMaker("myFile.svg",1920,1080);
+        SvgMaker svg = new SvgMaker("myFile.svg",CANVAS_X,CANVAS_Y);
 
         svg.initFileWriter();
         svg.writeRootTag();
@@ -92,19 +51,24 @@ public class Main {
         for (int i = 0; i < CIRC_ARR_MAX; i++) {
             svg.drawCircle(circArr[i]);
         }
-        for (int i = 0; i < CIRC_ARR_MAX; i++) {
-            svg.drawCircle(circArr2[i]);
-        }
-        for (int i = 0; i < CIRC_ARR_MAX; i++) {
-            svg.drawCircle(circArr3[i]);
-        }
-        for (int i = 0; i < CIRC_ARR_MAX; i++) {
-            svg.drawCircle(circArr4[i]);
-        }
-        for (int i = 0; i < CIRC_ARR_MAX; i++) {
-            svg.drawCircle(circArr5[i]);
-        }
 
         svg.writeClosingTag();
     }
+
+    public static double getDoubleInRange(double rangeMin, double rangeMax) {
+        Random r = new Random();
+        return (rangeMin + (rangeMax - rangeMin) * r.nextDouble());
+    }
+
+    public static int getRandSign() {
+        Random r = new Random();
+        return ( r.nextBoolean() ? 1 : -1 );
+    }
+
+    public static double getCenterDist(Circle c1, Circle c2) {
+        double distX = c1.getCx() - c2.getCx();
+        double distY = c1.getCy() - c2.getCy();
+        return Math.sqrt((distX * distX) + (distY * distY));
+    }
+
 }
