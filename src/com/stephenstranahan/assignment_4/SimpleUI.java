@@ -52,7 +52,6 @@ public class SimpleUI implements Runnable {
 
         JTextArea textArea = new JTextArea();
 
-
         // Submit button
         JButton submit = new JButton("Submit");
         SubmitListener submitListener = new SubmitListener(submit, textArea, tfFName, tfLName, tfUName, pw);
@@ -66,7 +65,6 @@ public class SimpleUI implements Runnable {
         //Panel and layout
         JPanel panel = new JPanel();
         panel.setLayout(new SpringLayout());    // Using SpringLayout class - a little easier to work with than GridLayout
-
 
         // Add components to panel
         panel.add(lblFName);
@@ -82,7 +80,6 @@ public class SimpleUI implements Runnable {
         panel.add(textArea);
         panel.add(submit);
         panel.add(close);
-
 
         // Set up layout - imported SpringUtilities class to get layout methods
         SpringUtilities.makeCompactGrid(panel, 6, 2, 6, 6, 6, 6);
