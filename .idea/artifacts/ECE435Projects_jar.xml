@@ -3,6 +3,8 @@
     <output-path>$USER_HOME$/Desktop</output-path>
     <root id="archive" name="ECE435Projects.jar">
       <element id="module-output" name="ECE435Projects" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/json-20201115.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/org.json-20120521.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

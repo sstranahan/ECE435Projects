@@ -14,6 +14,7 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 public class GUI implements Runnable {
@@ -95,7 +96,7 @@ public class GUI implements Runnable {
                     }
 
                     InputStreamReader myInputStreamReader;
-                    myInputStreamReader = new InputStreamReader(myInputStream);
+                    myInputStreamReader = new InputStreamReader(myInputStream, StandardCharsets.UTF_8);
 
                     BufferedReader in = new BufferedReader(myInputStreamReader);
 
@@ -394,7 +395,7 @@ public class GUI implements Runnable {
                     }
 
                     InputStreamReader myInputStreamReader;
-                    myInputStreamReader = new InputStreamReader(myInputStream);
+                    myInputStreamReader = new InputStreamReader(myInputStream, StandardCharsets.UTF_8);
 
                     BufferedReader in = new BufferedReader(myInputStreamReader);
 
@@ -537,7 +538,7 @@ public class GUI implements Runnable {
                     }
 
                     InputStreamReader myInputStreamReader;
-                    myInputStreamReader = new InputStreamReader(myInputStream);
+                    myInputStreamReader = new InputStreamReader(myInputStream, StandardCharsets.UTF_8);
 
                     BufferedReader in = new BufferedReader(myInputStreamReader);
 
@@ -666,7 +667,7 @@ public class GUI implements Runnable {
                     }
 
                     InputStreamReader myInputStreamReader;
-                    myInputStreamReader = new InputStreamReader(myInputStream);
+                    myInputStreamReader = new InputStreamReader(myInputStream, StandardCharsets.UTF_8);
 
                     BufferedReader in = new BufferedReader(myInputStreamReader);
 
