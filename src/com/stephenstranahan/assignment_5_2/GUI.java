@@ -1,6 +1,5 @@
 package com.stephenstranahan.assignment_5_2;
 
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -181,129 +180,6 @@ public class GUI implements Runnable {
                     returnArea.setText("Error: you must enter a movie title to search.");
                 }
             }
-
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                super.mousePressed(e);
-//
-//                String title = null;
-//                String urlStr = null;
-//
-//                if (!enterSearchTitleHereTextField.getText().equals("")) {
-//                    title = enterSearchTitleHereTextField.getText();
-//
-//                    urlStr = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=" + title + "&api-key=jjLhMLHHp43pEGBw0HaJEqcehYpMiiCA";
-//
-//                    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-//
-//                    URL myUrl = null;
-//                    try {
-//                        myUrl = new URL(urlStr);
-//                    } catch (MalformedURLException malformedURLException) {
-//                        malformedURLException.printStackTrace();
-//                    }
-//
-//                    URLConnection myUrlConnection = null;
-//                    try {
-//                        myUrlConnection = myUrl.openConnection();
-//                    } catch (IOException ioException) {
-//                        ioException.printStackTrace();
-//                    }
-//
-//                    InputStream myInputStream = null;
-//                    try {
-//                        myInputStream = myUrlConnection.getInputStream();
-//                    } catch (IOException ioException) {
-//                        ioException.printStackTrace();
-//                    }
-//
-//                    InputStreamReader myInputStreamReader;
-//                    myInputStreamReader = new InputStreamReader(myInputStream);
-//
-//                    BufferedReader in = new BufferedReader(myInputStreamReader);
-//
-//                    try {
-//                        str2 = readJSON(line, in, str);
-//                    } catch (IOException ioException) {
-//                        ioException.printStackTrace();
-//                    }
-//
-//                    JSONObject returnJSON;
-//                    returnJSON = new JSONObject(str2.substring(4));
-//
-//                    int numRes = returnJSON.getInt("num_results");
-//
-//                    if (returnJSON.getInt("num_results") == 0)
-//                        returnArea.setText("No results found");
-//
-//                    JSONArray resArr = returnJSON.getJSONArray("results");
-//
-//                    String[] titleArr = new String[numRes];
-//                    String[] ratingArr = new String[numRes];
-//                    String[] bylineArr = new String[numRes];
-//                    String[] headlineArr = new String[numRes];
-//                    String[] summArr = new String[numRes];
-//                    String[] pubDateArr = new String[numRes];
-//                    String[] openDateArr = new String[numRes];
-//                    JSONObject[] linkArr = new JSONObject[numRes];
-//                    String[] linkURLArr = new String[numRes];
-//                    String[] linkDispArr = new String[numRes];
-//                    JSONObject[] imgArr = new JSONObject[numRes];
-//                    String[] imgURLArr = new String[numRes];
-//
-//
-//                    JSONObject[] objArr = new JSONObject[resArr.length()];
-//
-//                    for (int i = 0; i < resArr.length(); i++) {
-//                        objArr[i] = resArr.getJSONObject(i);
-//                        titleArr[i] = objArr[i].getString("display_title");
-//                        ratingArr[i] = objArr[i].getString("mpaa_rating");
-//                        bylineArr[i] = objArr[i].getString("byline");
-//                        headlineArr[i] = objArr[i].getString("headline");
-//                        pubDateArr[i] = objArr[i].getString("publication_date");
-//                        if (!objArr[i].get("opening_date").equals(null)) {
-//                            openDateArr[i] = objArr[i].getString("opening_date");
-//                        } else {
-//                            openDateArr[i] = " ";
-//                        }
-//                        if (!objArr[i].get("summary_short").equals(null)) {
-//                            summArr[i] = objArr[i].getString("summary_short");
-//                        } else {
-//                            summArr[i] = " ";
-//                        }
-//                        linkArr[i] = objArr[i].getJSONObject("link");
-//                        linkURLArr[i] = linkArr[i].getString("url");
-//                        linkDispArr[i] = linkArr[i].getString("suggested_link_text");
-//                    }
-//
-//
-//                    String returnStr = "";
-//
-//                    returnStr += "\n\n\tYOU SEARCHED:\t" + enterSearchTitleHereTextField.getText() + "\n\n" + "\tNUMBER OF RESULTS:\t" + numRes + "\n\n\n";
-//
-//
-//                    for (int i = 0; i < numRes; i++) {
-//                        returnStr += "**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************\n";
-//                        returnStr += "\tTitle:\t\t" + titleArr[i] + "\n";
-//                        returnStr += "**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************\n\n";
-//                        returnStr += "\tRating:\t\t" + ratingArr[i] + "\n\n";
-//                        returnStr += "\tReview by:\t\t" + bylineArr[i] + "\n\n";
-//                        returnStr += "\tReview Title:\t\t" + headlineArr[i] + "\n\n";
-//                        returnStr += "\tReview Published Date:\t" + pubDateArr[i] + "\n\n";
-//                        returnStr += "\tFilm Opening Date:\t" + openDateArr[i] + "\n\n";
-//                        returnStr += "\tURL of review:\t\t" + linkURLArr[i] + "\n";
-//                        returnStr += "\n";
-//                    }
-//
-//
-//                    returnArea.setText(returnStr);
-//                    scroll.setWheelScrollingEnabled(true);
-//                    returnArea.setCaretPosition(0);
-//
-//                } else {
-//                    returnArea.setText("Error: you must enter a movie title to search.");
-//                }
-//            }
         });
         save.addMouseListener(new MouseAdapter() {
             @Override
@@ -331,29 +207,6 @@ public class GUI implements Runnable {
 
                 }
             }
-
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                super.mousePressed(e);
-//                final JFileChooser fc = new JFileChooser();
-//                int returnVal = fc.showSaveDialog(save); //parent component to JFileChooser
-//                if (returnVal == JFileChooser.APPROVE_OPTION) { //OK button pressed by user
-//                    File file = fc.getSelectedFile(); //get File selected by user
-//                    BufferedWriter outFile = null;
-//
-//                    try {
-//                        outFile = new BufferedWriter(new FileWriter(file)); //use its name
-//                    } catch (IOException ioException) {
-//                        ioException.printStackTrace();
-//                    }
-//
-//                    try {
-//                        outFile.write(returnStr);
-//                    } catch (IOException ioException) {
-//                        ioException.printStackTrace();
-//                    }
-//                }
-//            }
         });
 
         next.addMouseListener(new MouseAdapter() {
